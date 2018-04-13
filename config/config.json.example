@@ -1,0 +1,5 @@
+{
+    "endpoint": "https://my-s3-instance.com",
+    "key": "my-key",
+    "secret": "my-secret"
+}
