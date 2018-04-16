@@ -14,4 +14,13 @@ $client = new S3Client([
     'version' => '2006-03-01',
 ]);
 
-var_dump($client->listBuckets());
+//var_export($client->listBuckets());
+
+//Use command pattern to list objects in a directory
+$params = [
+    'Bucket' => 'iaptus-docs',
+    'Key' => 'service1/',
+];
+
+$command = $client->getCommand('ListObjects', $params);
+var_export($client->execute($command));
