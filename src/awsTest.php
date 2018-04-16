@@ -16,6 +16,13 @@ $client = new S3Client([
 
 //var_export($client->listBuckets());
 
+//Upload a file
+$client->putObject([
+    'Bucket' => 'iaptus-docs',
+    'Key' => 'service1/daves_stuff/test.txt',
+    'Body' => 'mooo',
+]);
+
 //Use command pattern to list objects in a directory
 $params = [
     'Bucket' => 'iaptus-docs',
