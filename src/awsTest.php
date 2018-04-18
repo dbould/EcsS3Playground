@@ -16,18 +16,32 @@ $client = new S3Client([
 
 //var_export($client->listBuckets());
 
+
 //Upload a file
-$client->putObject([
+//var_export($client->putObject([
+//    'Bucket' => 'iaptus-docs',
+//    'Key' => 'service1/test.txt',
+//    'Body' => 'cluck',
+//]));
+
+//$client->deleteObject([
+//    'Bucket' => 'iaptus-docs',
+//    'Key' => 'service1/test.txt',
+//    'Body' => 'cluck',
+//]);
+
+$testFile = $client->getObject([
     'Bucket' => 'iaptus-docs',
-    'Key' => 'service1/daves_stuff/test.txt',
-    'Body' => 'mooo',
+    'Key' => 'service1/test.txt',
 ]);
 
-//Use command pattern to list objects in a directory
-$params = [
-    'Bucket' => 'iaptus-docs',
-    'Key' => 'service1/',
-];
+var_dump($testFile->get('contents'));
 
-$command = $client->getCommand('ListObjects', $params);
-var_export($client->execute($command));
+////Use command pattern to list objects in a directory
+//$params = [
+//    'Bucket' => 'iaptus-docs',
+//    'Prefix' => 'service1/daves_stuff',
+//];
+
+//$command = $client->getCommand('ListObjects', $params);
+//var_export($client->execute($command));
