@@ -16,7 +16,7 @@ $client = new S3Client([
     'version' => '2006-03-01',
 ]);
 
-$adapter = new AwsS3Adapter($client, 'iaptus-docs');
+$adapter = new AwsS3Adapter($client, $configuration->bucket);
 $filesystem = new Filesystem($adapter);
 
 $folderContent = $filesystem->listContents('service1/daves_stuff/');
