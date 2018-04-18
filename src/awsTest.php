@@ -30,6 +30,7 @@ $client = new S3Client([
 //    'Body' => 'cluck',
 //]);
 
+//Read a file
 $testFile = $client->getObject([
     'Bucket' => 'iaptus-docs',
     'Key' => 'service1/test.txt',

@@ -27,4 +27,6 @@ $filesystem->write('service1/daves_stuff/test.txt', fopen('test.txt', 'r'));
 
 //var_export($filesystem->listContents('service1/daves_stuff/'));
 $myFile = $filesystem->get('service1/daves_stuff/test.txt');
+
+//Read a file
 var_export($myFile->read('service1/daves_stuff/test.txt'));
