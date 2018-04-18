@@ -28,6 +28,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'upload') {
             <tr>
                 <th>Filename</th>
                 <th>Download</th>
+                <th>Direct Link</th>
 
                 <?php
                     foreach ($folderContent as $object) {
@@ -38,6 +39,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'upload') {
                                 <input type="hidden" value="<?php echo $object['basename'] ?>" name="filename" />
                                 <input type="submit" value="Download" />
                             </td>
+                            <td><a href="<?php echo $client->getObjectUrl($configuration->bucket, $object['path']);?>">Download</a></td>
                         </tr>
                         <?php
                     }
