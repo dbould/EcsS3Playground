@@ -22,11 +22,14 @@ $client = new S3Client([
 $adapter = new AwsS3Adapter($client, 'iaptus-docs');
 $filesystem = new Filesystem($adapter);
 
-$filesystem->delete('service1/daves_stuff/test.txt');
-$filesystem->write('service1/daves_stuff/test.txt', fopen('test.txt', 'r'));
+//$filesystem->delete('service1/daves_stuff/test.txt');
+//$filesystem->write('service1/daves_stuff/test.txt', fopen('test.txt', 'r'));
 
 //var_export($filesystem->listContents('service1/daves_stuff/'));
-$myFile = $filesystem->get('service1/daves_stuff/test.txt');
+//$myFile = $filesystem->get('service1/daves_stuff/test.txt');
 
 //Read a file
-var_export($myFile->read('service1/daves_stuff/test.txt'));
+//var_export($myFile->read('service1/daves_stuff/test.txt'));
+
+//Read a file with a steam
+
