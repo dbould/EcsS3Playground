@@ -7,9 +7,18 @@ if (isset($_GET['filename']) && !empty($_GET['filename']) && isset($_GET['action
     echo $object->read();
     die();
 }
+
+if ($_POST['action'] == 'upload') {
+    $filesystem->write('service1/daves_stuff/' . $_FILES["newFile"]["name"], fopen($_FILES["newFile"]["tmp_name"], 'r'));
+}
 ?>
 
 <html>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="newFile" />
+    <input type="hidden" value="upload" name="action" />
+    <input type="submit" value="Upload File" />
+</form>
 Upload a file: <button>Upload</button>
 
 <div>
