@@ -16,21 +16,24 @@ $client = new S3Client([
     'version' => '2006-03-01',
 ]);
 
-//List buckets
-//var_export($client->listBuckets());
-
 $adapter = new AwsS3Adapter($client, 'iaptus-docs');
 $filesystem = new Filesystem($adapter);
 
 $folderContent = $filesystem->listContents('service1/daves_stuff/');
+
+//Examples below
+
+//Delete a file
 //$filesystem->delete('service1/daves_stuff/test.txt');
+
+//Upload new file
 //$filesystem->write('service1/daves_stuff/test.txt', fopen('test.txt', 'r'));
 
+//See directory content
 //var_export($filesystem->listContents('service1/daves_stuff/'));
+
+//Fetch file object
 //$myFile = $filesystem->get('service1/daves_stuff/test.txt');
 
 //Read a file
 //var_export($myFile->read('service1/daves_stuff/test.txt'));
-
-//Read a file with a steam
-
