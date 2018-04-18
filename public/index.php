@@ -8,7 +8,7 @@ if (isset($_POST['filename']) && !empty($_POST['filename']) && isset($_POST['act
     die();
 }
 
-if ($_POST['action'] == 'upload') {
+if (isset($_POST['action']) && $_POST['action'] == 'upload') {
     $filesystem->write('service1/daves_stuff/' . $_FILES["newFile"]["name"], fopen($_FILES["newFile"]["tmp_name"], 'r'));
 }
 ?>
