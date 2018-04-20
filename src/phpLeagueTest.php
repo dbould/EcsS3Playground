@@ -33,7 +33,8 @@ $folderContent = $filesystem->listContents('service1/daves_stuff/');
 //var_export($filesystem->listContents('service1/daves_stuff/'));
 
 //Fetch file object
-//$myFile = $filesystem->get('service1/daves_stuff/test.txt');
+$myFile = $filesystem->get('service1/daves_stuff/test.txt');
 
 //Read a file
-//var_export($myFile->read('service1/daves_stuff/test.txt'));
+var_export($myFile->read('service1/daves_stuff/test.txt'));
+//$myFile->readStream();
