@@ -39,7 +39,9 @@ $testFile = $client->getObject([
 ]);
 //echo get_class($testFile['Body']);
 
-echo $testFile['Body'];
+//The object contained in the body is a GuzzleHttp\Psr7\Stream
+//Contents can be read using echo, var_dump will dump the object
+echo get_class($testFile['Body']);
 
 ////Use command pattern to list objects in a directory
 //$params = [
