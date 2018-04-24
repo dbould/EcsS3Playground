@@ -36,8 +36,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'upload') {
                         <tr>
                             <td><?php echo $object['basename'] ?></td>
                             <td>
-                                <input type="hidden" value="<?php echo $object['basename'] ?>" name="filename" />
-                                <input type="submit" value="Download" />
+                                <input type="radio" value="<?php echo $object['basename'] ?>" name="filename" />
                             </td>
                             <td><a href="<?php echo $client->getObjectUrl($configuration->bucket, $object['path']);?>">Download</a></td>
                         </tr>
@@ -47,6 +46,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'upload') {
             </tr>
 
         </table>
+
+        <input type="submit" value="Download" />
     </form>
 </div>
 
