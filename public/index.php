@@ -2,14 +2,14 @@
 require_once __DIR__ . '/../src/phpLeagueTest.php';
 
 if (isset($_POST['filename']) && !empty($_POST['filename']) && isset($_POST['action']) && $_POST['action'] == 'fetch') {
-    $object = $filesystem->get('service1/daves_stuff/' . $_POST['filename']);
+    $object = $filesystem->get('daves_stuff/' . $_POST['filename']);
     header("Content-Type: {$object->getMimetype()}");
     echo $object->read();
     die();
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'upload') {
-    $filesystem->write('service1/daves_stuff/' . $_FILES["newFile"]["name"], fopen($_FILES["newFile"]["tmp_name"], 'r'));
+    $filesystem->write('daves_stuff/' . $_FILES["newFile"]["name"], fopen($_FILES["newFile"]["tmp_name"], 'r'));
 }
 ?>
 
